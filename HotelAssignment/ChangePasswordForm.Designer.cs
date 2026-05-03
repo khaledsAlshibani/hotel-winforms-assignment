@@ -48,7 +48,7 @@
             this.change_pwd_pnl.Controls.Add(this.label3);
             this.change_pwd_pnl.Controls.Add(this.login_btn);
             this.change_pwd_pnl.Controls.Add(this.label1);
-            this.change_pwd_pnl.Location = new System.Drawing.Point(200, 73);
+            this.change_pwd_pnl.Location = new System.Drawing.Point(321, 70);
             this.change_pwd_pnl.Name = "change_pwd_pnl";
             this.change_pwd_pnl.Size = new System.Drawing.Size(511, 449);
             this.change_pwd_pnl.TabIndex = 5;
@@ -57,8 +57,8 @@
             // 
             this.new_pwd_txt.Location = new System.Drawing.Point(6, 194);
             this.new_pwd_txt.Name = "new_pwd_txt";
-            this.new_pwd_txt.Size = new System.Drawing.Size(484, 31);
-            this.new_pwd_txt.TabIndex = 8;
+            this.new_pwd_txt.Size = new System.Drawing.Size(502, 31);
+            this.new_pwd_txt.TabIndex = 1;
             // 
             // label4
             // 
@@ -67,7 +67,7 @@
             this.label4.Location = new System.Drawing.Point(-3, 71);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(514, 73);
-            this.label4.TabIndex = 4;
+            this.label4.TabIndex = 0;
             this.label4.Text = "You will not be able to reset your password, memorize it very well";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
@@ -75,8 +75,8 @@
             // 
             this.confirm_new_pwd_txt.Location = new System.Drawing.Point(6, 296);
             this.confirm_new_pwd_txt.Name = "confirm_new_pwd_txt";
-            this.confirm_new_pwd_txt.Size = new System.Drawing.Size(484, 31);
-            this.confirm_new_pwd_txt.TabIndex = 9;
+            this.confirm_new_pwd_txt.Size = new System.Drawing.Size(502, 31);
+            this.confirm_new_pwd_txt.TabIndex = 2;
             // 
             // label2
             // 
@@ -84,8 +84,8 @@
             this.label2.Location = new System.Drawing.Point(1, 257);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(234, 25);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Confirm New Password";
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Confirm New Password *";
             // 
             // label3
             // 
@@ -94,7 +94,7 @@
             this.label3.Location = new System.Drawing.Point(-3, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(496, 51);
-            this.label3.TabIndex = 6;
+            this.label3.TabIndex = 0;
             this.label3.Text = "Change Your Password";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
@@ -105,8 +105,8 @@
             this.login_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.login_btn.Location = new System.Drawing.Point(6, 381);
             this.login_btn.Name = "login_btn";
-            this.login_btn.Size = new System.Drawing.Size(484, 65);
-            this.login_btn.TabIndex = 10;
+            this.login_btn.Size = new System.Drawing.Size(502, 65);
+            this.login_btn.TabIndex = 3;
             this.login_btn.Text = "Login";
             this.login_btn.UseVisualStyleBackColor = false;
             this.login_btn.Click += new System.EventHandler(this.login_btn_Click);
@@ -117,14 +117,14 @@
             this.label1.Location = new System.Drawing.Point(1, 153);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(154, 25);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "New Password";
+            this.label1.TabIndex = 0;
+            this.label1.Text = "New Password *";
             // 
             // ChangePasswordForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(888, 596);
+            this.ClientSize = new System.Drawing.Size(1200, 596);
             this.Controls.Add(this.change_pwd_pnl);
             this.Name = "ChangePasswordForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
