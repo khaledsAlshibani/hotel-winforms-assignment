@@ -53,6 +53,24 @@ namespace HotelAssignment
             Close();
         }
 
+        private void search_btn_Click(object sender, EventArgs e)
+        {
+            if (!ConfirmDiscardFieldInput())
+            {
+                return;
+            }
+            LoadRooms();
+        }
+
+        private void search_txt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                search_btn_Click(sender, e);
+            }
+        }
+
         private void LoadRooms()
         {
             if (!DbUtils.CheckConn(conn))
@@ -62,8 +80,18 @@ namespace HotelAssignment
 
             try
             {
-                string sql = "SELECT Id, RoomNumber, Status, Floor FROM Rooms ORDER BY Id";
+                string term = search_txt.Text.Trim();
+                string sql = "SELECT Id, RoomNumber, Status, Floor FROM Rooms ";
+                if (term != "")
+                {
+                    sql += "WHERE RoomNumber LIKE @q OR Status LIKE @q OR CAST(Floor AS NVARCHAR(10)) LIKE @q ";
+                }
+                sql += "ORDER BY Id";
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
+                if (term != "")
+                {
+                    adapter.SelectCommand.Parameters.AddWithValue("@q", "%" + term + "%");
+                }
                 DataTable dt = new DataTable();
                 try
                 {

@@ -23,6 +23,7 @@ namespace HotelAssignment
         public LoginForm()
         {
             InitializeComponent();
+            pwd_txt.PasswordChar = '*';
             DbUtils.StartLocalDb();
             string pipe = DbUtils.GetLocalDbPipe();
             conn = new SqlConnection(
@@ -75,7 +76,7 @@ namespace HotelAssignment
             string password = pwd_txt.Text.Trim();
             try
             {
-                // PasswordHelper.TestDefaultUserPwd(conn, username);
+                //PasswordHelper.TestDefaultUserPwd(conn, username);
 
                 string sql = "SELECT id, PasswordHash FROM Users WHERE Username=@u";
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
@@ -106,6 +107,11 @@ namespace HotelAssignment
             {
                 MessageBox.Show(exception.Message);
             }
+        }
+
+        private void login_pnl_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

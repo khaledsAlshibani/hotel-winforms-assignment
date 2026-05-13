@@ -44,6 +44,9 @@ namespace HotelAssignment
             this.label_floor = new System.Windows.Forms.Label();
             this.floor_cmb = new System.Windows.Forms.ComboBox();
             this.header_pnl = new System.Windows.Forms.Panel();
+            this.search_btn = new System.Windows.Forms.Button();
+            this.search_txt = new System.Windows.Forms.TextBox();
+            this.search_lbl = new System.Windows.Forms.Label();
             this.back_btn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.rooms_pnl.SuspendLayout();
@@ -223,6 +226,9 @@ namespace HotelAssignment
             // 
             // header_pnl
             // 
+            this.header_pnl.Controls.Add(this.search_btn);
+            this.header_pnl.Controls.Add(this.search_txt);
+            this.header_pnl.Controls.Add(this.search_lbl);
             this.header_pnl.Controls.Add(this.back_btn);
             this.header_pnl.Controls.Add(this.label3);
             this.header_pnl.Dock = System.Windows.Forms.DockStyle.Top;
@@ -231,6 +237,36 @@ namespace HotelAssignment
             this.header_pnl.Padding = new System.Windows.Forms.Padding(12, 8, 12, 8);
             this.header_pnl.Size = new System.Drawing.Size(1200, 79);
             this.header_pnl.TabIndex = 3;
+            // 
+            // search_btn
+            // 
+            this.search_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.search_btn.Location = new System.Drawing.Point(1096, 18);
+            this.search_btn.Name = "search_btn";
+            this.search_btn.Size = new System.Drawing.Size(92, 39);
+            this.search_btn.TabIndex = 13;
+            this.search_btn.Text = "Search";
+            this.search_btn.UseVisualStyleBackColor = true;
+            this.search_btn.Click += new System.EventHandler(this.search_btn_Click);
+            // 
+            // search_txt
+            // 
+            this.search_txt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.search_txt.Location = new System.Drawing.Point(848, 22);
+            this.search_txt.Name = "search_txt";
+            this.search_txt.Size = new System.Drawing.Size(230, 31);
+            this.search_txt.TabIndex = 12;
+            this.search_txt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.search_txt_KeyDown);
+            // 
+            // search_lbl
+            // 
+            this.search_lbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.search_lbl.AutoSize = true;
+            this.search_lbl.Location = new System.Drawing.Point(766, 25);
+            this.search_lbl.Name = "search_lbl";
+            this.search_lbl.Size = new System.Drawing.Size(80, 25);
+            this.search_lbl.TabIndex = 0;
+            this.search_lbl.Text = "Search:";
             // 
             // back_btn
             // 
@@ -292,6 +328,9 @@ namespace HotelAssignment
         private System.Windows.Forms.Button delete_room_btn;
         private System.Windows.Forms.Button refresh_room_btn;
         private System.Windows.Forms.Panel header_pnl;
+        private System.Windows.Forms.Button search_btn;
+        private System.Windows.Forms.TextBox search_txt;
+        private System.Windows.Forms.Label search_lbl;
         private System.Windows.Forms.Button back_btn;
         private System.Windows.Forms.Label label3;
     }

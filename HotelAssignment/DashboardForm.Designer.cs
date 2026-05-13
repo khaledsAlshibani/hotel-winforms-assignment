@@ -31,6 +31,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.manage_rooms_btn = new System.Windows.Forms.Button();
             this.manage_reservations_btn = new System.Windows.Forms.Button();
+            this.reports_btn = new System.Windows.Forms.Button();
             this.manage_guests_btn = new System.Windows.Forms.Button();
             this.logout_btn = new System.Windows.Forms.Button();
             this.overview_grp = new System.Windows.Forms.GroupBox();
@@ -56,27 +57,36 @@
             // 
             // manage_rooms_btn
             // 
-            this.manage_rooms_btn.Location = new System.Drawing.Point(729, 311);
+            this.manage_rooms_btn.Location = new System.Drawing.Point(729, 235);
             this.manage_rooms_btn.Name = "manage_rooms_btn";
-            this.manage_rooms_btn.Size = new System.Drawing.Size(384, 92);
+            this.manage_rooms_btn.Size = new System.Drawing.Size(384, 109);
             this.manage_rooms_btn.TabIndex = 2;
             this.manage_rooms_btn.Text = "Manage Rooms";
             this.manage_rooms_btn.UseVisualStyleBackColor = true;
             // 
             // manage_reservations_btn
             // 
-            this.manage_reservations_btn.Location = new System.Drawing.Point(729, 413);
+            this.manage_reservations_btn.Location = new System.Drawing.Point(729, 359);
             this.manage_reservations_btn.Name = "manage_reservations_btn";
-            this.manage_reservations_btn.Size = new System.Drawing.Size(384, 92);
+            this.manage_reservations_btn.Size = new System.Drawing.Size(384, 109);
             this.manage_reservations_btn.TabIndex = 3;
             this.manage_reservations_btn.Text = "Manage Reservations";
             this.manage_reservations_btn.UseVisualStyleBackColor = true;
             // 
+            // reports_btn
+            // 
+            this.reports_btn.Location = new System.Drawing.Point(729, 483);
+            this.reports_btn.Name = "reports_btn";
+            this.reports_btn.Size = new System.Drawing.Size(384, 109);
+            this.reports_btn.TabIndex = 8;
+            this.reports_btn.Text = "Reports";
+            this.reports_btn.UseVisualStyleBackColor = true;
+            // 
             // manage_guests_btn
             // 
-            this.manage_guests_btn.Location = new System.Drawing.Point(729, 208);
+            this.manage_guests_btn.Location = new System.Drawing.Point(729, 109);
             this.manage_guests_btn.Name = "manage_guests_btn";
-            this.manage_guests_btn.Size = new System.Drawing.Size(384, 92);
+            this.manage_guests_btn.Size = new System.Drawing.Size(384, 109);
             this.manage_guests_btn.TabIndex = 1;
             this.manage_guests_btn.Text = "Manage Guests";
             this.manage_guests_btn.UseVisualStyleBackColor = true;
@@ -85,7 +95,7 @@
             // 
             this.logout_btn.BackColor = System.Drawing.Color.Transparent;
             this.logout_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.logout_btn.Location = new System.Drawing.Point(1002, 554);
+            this.logout_btn.Location = new System.Drawing.Point(1002, 618);
             this.logout_btn.Name = "logout_btn";
             this.logout_btn.Size = new System.Drawing.Size(111, 53);
             this.logout_btn.TabIndex = 4;
@@ -172,7 +182,7 @@
             // 
             // refresh_overview_btn
             // 
-            this.refresh_overview_btn.Location = new System.Drawing.Point(102, 549);
+            this.refresh_overview_btn.Location = new System.Drawing.Point(102, 534);
             this.refresh_overview_btn.Name = "refresh_overview_btn";
             this.refresh_overview_btn.Size = new System.Drawing.Size(541, 58);
             this.refresh_overview_btn.TabIndex = 7;
@@ -187,6 +197,7 @@
             this.Controls.Add(this.refresh_overview_btn);
             this.Controls.Add(this.overview_grp);
             this.Controls.Add(this.logout_btn);
+            this.Controls.Add(this.reports_btn);
             this.Controls.Add(this.manage_guests_btn);
             this.Controls.Add(this.manage_reservations_btn);
             this.Controls.Add(this.manage_rooms_btn);
@@ -207,6 +218,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button manage_rooms_btn;
         private System.Windows.Forms.Button manage_reservations_btn;
+        private System.Windows.Forms.Button reports_btn;
         private System.Windows.Forms.Button manage_guests_btn;
         private System.Windows.Forms.Button logout_btn;
         private System.Windows.Forms.GroupBox overview_grp;

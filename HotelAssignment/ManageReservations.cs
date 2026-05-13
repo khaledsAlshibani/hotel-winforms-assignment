@@ -97,6 +97,24 @@ namespace HotelAssignment
             Close();
         }
 
+        private void search_btn_Click(object sender, EventArgs e)
+        {
+            if (!ConfirmDiscardFieldInput())
+            {
+                return;
+            }
+            LoadReservations();
+        }
+
+        private void search_txt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                search_btn_Click(sender, e);
+            }
+        }
+
         private void LoadGuestAndRoomCombos()
         {
             LoadRoomCombo();
@@ -176,8 +194,18 @@ namespace HotelAssignment
 
             try
             {
-                string sql = "SELECT r.Id, r.GuestId, r.RoomId, g.FirstName + ' ' + g.LastName AS GuestName, rm.RoomNumber, r.CheckInDate, r.CheckOutDate, r.Status, r.TotalCost FROM Reservations r INNER JOIN Guests g ON g.Id = r.GuestId INNER JOIN Rooms rm ON rm.Id = r.RoomId ORDER BY r.Id";
+                string term = search_txt.Text.Trim();
+                string sql = "SELECT r.Id, r.GuestId, r.RoomId, g.FirstName + N' ' + g.LastName AS GuestName, rm.RoomNumber, r.CheckInDate, r.CheckOutDate, r.Status, r.TotalCost FROM Reservations r INNER JOIN Guests g ON g.Id = r.GuestId INNER JOIN Rooms rm ON rm.Id = r.RoomId ";
+                if (term != "")
+                {
+                    sql += "WHERE (g.FirstName + N' ' + g.LastName) LIKE @q OR rm.RoomNumber LIKE @q OR r.Status LIKE @q OR CONVERT(NVARCHAR(10), r.CheckInDate, 23) LIKE @q OR CONVERT(NVARCHAR(10), r.CheckOutDate, 23) LIKE @q OR ISNULL(CONVERT(NVARCHAR(50), r.TotalCost), N'') LIKE @q ";
+                }
+                sql += "ORDER BY r.Id";
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
+                if (term != "")
+                {
+                    adapter.SelectCommand.Parameters.AddWithValue("@q", "%" + term + "%");
+                }
                 DataTable dt = new DataTable();
                 try
                 {

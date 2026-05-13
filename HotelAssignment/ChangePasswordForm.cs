@@ -20,10 +20,14 @@ namespace HotelAssignment
         public ChangePasswordForm()
         {
             InitializeComponent();
+            new_pwd_txt.PasswordChar = '*';
+            confirm_new_pwd_txt.PasswordChar = '*';
         }
         public ChangePasswordForm(int userId, SqlConnection conn)
         {
             InitializeComponent();
+            new_pwd_txt.PasswordChar = '*';
+            confirm_new_pwd_txt.PasswordChar = '*';
             this.userId = userId;
             this.conn = conn;
             LoadCurrentPasswordHash();

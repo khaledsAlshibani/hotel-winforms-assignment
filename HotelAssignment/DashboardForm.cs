@@ -37,6 +37,7 @@ namespace HotelAssignment
             manage_guests_btn.Click += ManageGuests_btn_Click;
             manage_rooms_btn.Click += ManageRooms_btn_Click;
             manage_reservations_btn.Click += ManageReservations_btn_Click;
+            reports_btn.Click += Reports_btn_Click;
             logout_btn.Click += Logout_btn_Click;
             refresh_overview_btn.Click += Refresh_overview_btn_Click;
         }
@@ -159,6 +160,12 @@ namespace HotelAssignment
             ManageReservations reservationsForm = new ManageReservations(conn);
             reservationsForm.ShowDialog(this);
             RunOverviewRefresh(false);
+        }
+
+        private void Reports_btn_Click(object sender, EventArgs e)
+        {
+            ReportsForm reportsForm = new ReportsForm(conn);
+            reportsForm.ShowDialog(this);
         }
 
         private void Logout_btn_Click(object sender, EventArgs e)
